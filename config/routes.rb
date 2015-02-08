@@ -1,4 +1,17 @@
+# Rails.application.routes.draw do
+#   get 'pages/contact'
+
+#   get 'pages/about'
+
 Rails.application.routes.draw do
+  get 'about', to: 'pages#about' # quand y'a about dans l'url va voir la fonction about du page controler
+  get 'contact', to: 'pages#contact'
+  root to: 'pages#home'
+
+  # Generic syntax:
+  # verb 'path', to: 'controller#action' (action is an instance method)
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
