@@ -1,0 +1,39 @@
+<style>
+  #wrapper {
+    width: 800px;
+    margin: auto;
+    margin-top: 80px;
+    padding: 30px 10px;
+    background-color: #EAEAEA;
+    border: 2px solid black;
+    border-radius: 4px;
+    box-shadow: 15px 15px 50px grey;
+  }
+</style>
+<div id="wrapper">
+  <h1><%=@article.title%></h1>
+  <p><%=@article.content%></p>
+
+  <hr>
+  <%= link_to "<= back to article list", articles_path %>
+</div>
+<br>
+<br>
+<br>
+
+<%=@markdown.render("
+Colons can be used to align columns.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+The outer pipes (|) are `optional`, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
+").html_safe%>

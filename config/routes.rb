@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   # get 'about', to: 'pages#about' # quand y'a about dans l'url va voir la fonction about du page controler
   # get 'contact', to: 'pages#contact'
-  resources :tasks # va creer les 7 routes pour task
+  resources :articles # va creer les 7 routes
 
   # Generic syntax:
   # verb 'path', to: 'controller#action' (action is an instance method)

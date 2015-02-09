@@ -1,0 +1,53 @@
+<style>
+  #wrapper {
+    width: 800px;
+    margin: auto;
+    margin-top: 80px;
+    padding: 30px 30px;
+    background-color: #EAEAEA;
+    border: 2px solid black;
+    border-radius: 4px;
+    box-shadow: 15px 15px 50px grey;
+  }
+
+</style>
+
+
+<div id="wrapper">
+  <h1 class="text-center">The wikinimous</h1>
+
+  <% @articles.each do |article| %>
+    <table>
+      <tr>
+        <td>
+          <h2><%= link_to article.title, article_path(article) %></h2>
+        </td>
+        <td>
+          <%= link_to edit_article_path(article) do %>
+          <h2><i style="width: 80px; text-align:right;" class="fa fa-pencil-square-o"></i></h2>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to article_path(article), method: :delete do %>
+          <h2><i class="fa fa-trash-o"></i></h2>
+          <% end %>
+        </td>
+      </tr>
+    </table>
+    <p><%=article.content%></p>
+    <br>
+  <% end %>
+
+
+  <br>
+  <div class="text-right">
+    <%= link_to new_article_path do %>
+    <i class="fa fa-plus"></i>
+    <% end%>
+  </div>
+
+</div>
+
+
+
+

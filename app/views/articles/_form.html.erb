@@ -1,0 +1,26 @@
+<style>
+  #wrapper {
+    width: 800px;
+    margin: auto;
+    margin-top: 80px;
+    padding: 30px 10px;
+    background-color: #EAEAEA;
+    border: 2px solid black;
+    border-radius: 4px;
+    box-shadow: 15px 15px 50px grey;
+  }
+</style>
+<div id="wrapper">
+  <h1 style="width:100%; text-align:center;">Create/Update</h1>
+  <%= form_for(@article) do |f| %>
+    <%= f.text_field :title, class: "form-control" %>
+    <% # text_area(:article, :content, cols: 107, rows: 10) %>
+    <%= f.text_field :content, rows: 3, class: "form-control" %>
+    <br>
+    <div class="text-center">
+      <%= f.submit 'All good', class: "text-center btn btn-success" %>
+    </div>
+  <% end %>
+  <br>
+  <%= link_to "<= cancel", articles_path %>
+</div>
