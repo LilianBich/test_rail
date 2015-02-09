@@ -1,26 +1,28 @@
 
 Rails.application.routes.draw do
-  get 'tasks/index'
+  # get 'tasks/', to: 'tasks#index'
 
-  get 'tasks/show'
+  # get 'tasks/show', to: 'tasks#show'
 
-  get 'tasks/new'
+  # get 'tasks/new', to: 'tasks#new'
 
-  get 'tasks/edit'
+  # post 'tasks/', to: 'tasks#create'
 
-  get 'tasks/update'
+  # get 'tasks/:id/edit', to: 'tasks#edit'
 
-  get 'tasks/create'
+  # post 'tasks/:id', to: 'tasks#update'
 
-  get 'tasks/delete'
+  # get 'tasks/delete', to: 'tasks#delete'
 
-  get 'about', to: 'pages#about' # quand y'a about dans l'url va voir la fonction about du page controler
-  get 'contact', to: 'pages#contact'
-  root to: 'pages#home'
-  resources :taks # va creer les 7 routes pour task
+  # get 'about', to: 'pages#about' # quand y'a about dans l'url va voir la fonction about du page controler
+  # get 'contact', to: 'pages#contact'
+  resources :tasks # va creer les 7 routes pour task
 
   # Generic syntax:
   # verb 'path', to: 'controller#action' (action is an instance method)
+  # verb 'task_path', to: 'tasks#index'
+  # verb 'new_path', to: 'tasks#new'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

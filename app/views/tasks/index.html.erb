@@ -1,2 +1,53 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<style>
+  #wrapper {
+    width: 300px;
+    margin: auto;
+    margin-top: 80px;
+    padding: 30px 30px;
+    background-color: #EAEAEA;
+    border: 2px solid black;
+    border-radius: 4px;
+    box-shadow: 15px 15px 50px grey;
+  }
+
+</style>
+
+
+<div id="wrapper">
+  <h1 class="text-center">The Todo list</h1>
+  <table>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td>
+          <%= link_to task.description, task_path(task) %>
+        </td>
+        <td>
+          <%= link_to edit_task_path(task) do %>
+          <i style="width: 80px; text-align:right;" class="fa fa-pencil-square-o"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to task_path(task), method: :delete do %>
+          <i class="fa fa-trash-o"></i>
+          <% end %>
+        </td>
+      </tr>
+
+
+
+    <!-- Pourquoi tasks_path et non task_path -->
+  <% end %>
+  </table>
+
+  <br>
+  <div class="text-right">
+    <%= link_to new_task_path do %>
+    <i class="fa fa-plus"></i>
+    <% end%>
+  </div>
+
+</div>
+
+
+
+
