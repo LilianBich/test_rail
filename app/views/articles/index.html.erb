@@ -20,7 +20,7 @@
     <table>
       <tr>
         <td>
-          <h2><%= link_to article.title, article_path(article) %></h2>
+          <h2><%= link_to article.title[2..-1], article_path(article) %></h2>
         </td>
         <td>
           <%= link_to edit_article_path(article) do %>
@@ -34,7 +34,7 @@
         </td>
       </tr>
     </table>
-    <p><%=article.content%></p>
+    <%=article.content.split(" ").first(50).join(" ").html_safe%>
     <br>
   <% end %>
 

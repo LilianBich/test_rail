@@ -6,11 +6,13 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    renderer = Redcarpet::Render::HTML.new()
+    @markdown = Redcarpet::Markdown.new(renderer, tables: true)
   end
 
   def show
-    renderer = Redcarpet::Render::HTML.new
-    @markdown = Redcarpet::Markdown.new(renderer, extensions = {})
+    renderer = Redcarpet::Render::HTML.new()
+    @markdown = Redcarpet::Markdown.new(renderer, tables: true)
   end
 
   def new

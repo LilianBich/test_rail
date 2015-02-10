@@ -5,9 +5,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Article.destroy_all
 10.times do
   article = Article.new
-  article.title = Faker::Company.catch_phrase
-  article.content = Faker::Lorem.words(100).join(" ")
+  article.title = "\# " + Faker::Company.catch_phrase
+  img = "![alt text](http://lorempixel.com/780/482/ 'Logo Title Text 1')"
+  intro = Faker::Lorem.words(50).join(" ") + "
+  "
+  link = " [" + Faker::Company.catch_phrase + "]" + "(" + Faker::Internet.url('example.com') + ") "
+  important_word = "`" + Faker::Lorem.words(3).join(" ") + "`"
+  first_para = "\#\#\#" + Faker::Company.catch_phrase + "\n" + Faker::Lorem.words(50).join(" ") + link + Faker::Lorem.words(50).join(" ") + "<br>"
+  second_para = "\#\#\#" + Faker::Company.catch_phrase + "\n" + Faker::Lorem.words(50).join(" ") + important_word + Faker::Lorem.words(50).join(" ")
+  article.content = ( intro + "\n" +img + "\n" + first_para + "\n" + second_para)
   article.save
 end
+
+
