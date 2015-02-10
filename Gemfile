@@ -8,8 +8,10 @@ end
 
 # faker is usefull for seed
 gem  'faker'
-# redcarpet
+# redcarpet is great for markdown
 gem 'redcarpet'
+# ace-rail-app is awsome to great designed textarea in form
+gem 'ace-rails-ap'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record

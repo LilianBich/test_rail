@@ -20,6 +20,7 @@
     <table>
       <tr>
         <td>
+          <!-- I remove the 2 first caractere of the title beacause their is some markdown in it -->
           <h2><%= link_to article.title[2..-1], article_path(article) %></h2>
         </td>
         <td>
@@ -34,7 +35,10 @@
         </td>
       </tr>
     </table>
-    <%=article.content.split(" ").first(50).join(" ").html_safe%>
+    <%=
+    @markdown.render(article.content.split(" ").first(50).join(" ")).html_safe
+    %>
+
     <br>
   <% end %>
 
